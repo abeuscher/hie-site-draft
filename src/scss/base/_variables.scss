@@ -1,0 +1,34 @@
+//colors
+$black:#000;
+$white:#fff;
+$gray:#ccc;
+$magenta:#82167e;
+$db:#dbdbdb;
+
+//GRID SETTINGS
+$num-cols:12;
+$gutter-width:50px;
+$prefix : "col";
+$bps: (xs: 0, s:640px, m:1024px, l:1320px);
+$susy : ( columns:$num-cols,gutters:0,gutter-position:inside);
+
+//$body-bg-color:linear-gradient(#131313 0%,#1c1c1c 20%,#2b2b2b 40%,#111111 60%,#000000 100%);
+$body-bg-color:rgba(0,0,0,.3);
+$wrapper-bg-color:$white;
+$wrapper-bg-color-home:rgba(0,0,0,.3);
+$page-header-bg:$gray;
+
+$body-text-color:$black;
+$body-link-color:$magenta;
+$header-color:$black;
+$page-header-color:$black;
+
+//fonts
+$body-font:'Lato',sans-serif;
+$header-font:'Lato', sans-serif;
+
+//$nav
+$nav-button-color:$black;
+$nav-drop-bg-color:$gray;
+$nav-drop-color:$black;
+$nav-drop-hover-color:lighten($black,30%);

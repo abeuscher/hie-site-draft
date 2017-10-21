@@ -1,0 +1,95 @@
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/mixins';
+
+@import 'base/header';
+@import 'base/footer';
+@import 'base/nav';
+@import 'base/modal';
+
+@import '../../node_modules/susy/sass/_susy.scss';
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+body {
+    font-family: $body-font;
+    color: $body-text-color;
+
+    a {
+        text-decoration: none;
+        color: $body-link-color;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $header-font;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin: 0 0 $gutter-width/2;
+    }
+}
+#bg-main {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: $body-bg-color;
+    background-size: cover;
+}
+#wrapper {
+    position: relative;
+    background: $wrapper-bg-color;
+    border-top: none;
+    border-bottom: none;
+    width: 98%;
+    @include bp(s) {
+        width: 90%;
+    }
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.row {
+    @include container();
+    @for $i from 1 through $num-cols {
+        .#{$prefix}-#{$i} {
+            @include span($i);
+        }
+    }
+    @each $bp, $val in $bps {
+         @media (min-width: $val){
+            @for $i from 1 through $num-cols {
+                .#{$prefix}-#{$bp}-#{$i} {
+                    @include span($i);
+                }
+            }
+        }
+    }
+}
+
+.button,
+a.button,
+button.button {
+    border: none;
+    color: #fff;
+    padding: 0.25em 2em;
+    margin: 0 auto;
+    text-align:center;
+    background:$black;
+    display:inline-block;
+    transition:all .25s ease-in;
+    &:hover {
+      background:lighten($black,50%);
+    }
+}
+section {
+  width:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,.8) 100%);
+}
+
+article {
+  padding:$gutter-width;
+  color:$white;
+}

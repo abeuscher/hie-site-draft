@@ -1,0 +1,15 @@
+header {
+  margin-bottom:$gutter-width;
+  .logo {
+    display: inline-block;
+    background:$black;
+    color:$white;
+    margin:$gutter-width/4;
+    padding:0 1em;
+    text-align:center;
+    line-height: .7;
+    h1 {
+      margin:0;
+    }
+  }
+}

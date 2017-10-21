@@ -1,0 +1,12 @@
+footer {
+    padding: $gutter-width;
+    text-align: center;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: $header-font;
+    background:$white;
+    p.paid-for {
+      border:1px solid $black;
+      padding:1em;
+    }
+}

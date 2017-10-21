@@ -1,0 +1,38 @@
+doctype html
+-
+  var siteUrl = "http://sample.com/"
+  var fontUrl = "https://fonts.googleapis.com/css?family="
+  var siteAuthor = "Author"
+  var googleFonts = ["Lato"];
+each font in googleFonts
+ - fontUrl = fontUrl + font.replace(" ","+")+"|"
+- fontUrl = fontUrl.substr(0,fontUrl.length-1)
+html(lang="en")
+  head
+    block page_id
+    meta(charset="UTF-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel="icon" sizes="16x16 32x32" href="/favicon.ico")
+    meta(name="author",content=siteAuthor)
+    meta(name="twitter:card",content="summary_large_image")
+    meta(name="twitter:site",content=siteUrl)
+    link(href=fontUrl,rel='stylesheet',type='text/css')
+    link(href="/css/screen.css",rel="stylesheet")
+    meta(property="og:type",content="website")
+    meta(property="og:url",content=siteUrl)
+    title TITLE
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='og:title', content='')
+    meta(name='og:image', content='')
+    meta(name='og:description', content='')
+    meta(name='twitter:title', content='')
+    meta(name='twitter:description', content='')
+    meta(name='twitter:image', content='')
+  body
+    #bg-main
+    #wrapper
+      include ./header.pug
+      block content
+      include ./footer.pug
+    script(src='/js/bundle.js')

@@ -1,0 +1,107 @@
+nav {
+    height: $gutter-width;
+    display: block;
+    vertical-align: middle;
+
+    .inner {
+        padding: 10px 0;
+    }
+
+    p {
+        display: inline-block;
+        text-transform: uppercase;
+        vertical-align: top;
+        font-weight: 400;
+        margin: 0;
+        line-height: $gutter-width;
+        font-family: $header-font;
+        padding-left: 1em;
+    }
+
+    .drop {
+        padding: $gutter-width/2 0 30px;
+        margin:  0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        background: $nav-drop-bg-color;
+        max-height:0;
+        overflow:hidden;
+        transition: 0.5s transform ease-out;
+        transition: 0.5s max-height ease-out;
+
+        &.active {
+          transition: 0.5s transform ease-in;
+          transition: 0.5s max-height ease-in;
+            max-height:2000px;
+            z-index: 999;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0 $gutter-width/2;
+            padding: 0;
+
+            li {
+                a {
+                    text-align: right;
+                    padding:$gutter-width/4 $gutter-width/2 $gutter-width/4 0;
+                    display: block;
+                    color:$nav-drop-color;
+
+                    &:hover {
+                      color:$nav-drop-hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .hb-button {
+        position: absolute;
+        top:0;
+        right:$gutter-width;
+        .hamburger {
+            @include hamburger($color:$nav-button-color);
+            margin: $gutter-width/4 0 0 $gutter-width/5;
+        }
+
+        p {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+        }
+    }
+
+    .social {
+        text-align: right;
+
+        p {
+            padding-right: 0.5em;
+
+            a {
+                color: $white;
+            }
+        }
+        img {
+          max-height:$gutter-width - 10;
+          margin-top:5px;
+        }
+
+        .social-label {
+            display: none;
+            @include bp(s) {
+                display: block;
+                float: left;
+                padding-right: 1em;
+            }
+        }
+
+        .fa {
+            float: right;
+            font-size: 1.4em;
+            color: #fff;
+            margin-top: $gutter-width/4;
+        }
+    }
+}
